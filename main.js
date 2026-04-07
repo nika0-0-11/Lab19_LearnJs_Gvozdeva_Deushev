@@ -179,90 +179,187 @@
 
 // Создание массива
 
-let numberArr = [1, 2, 3, 4, 5];
-console.log(numberArr);
+// let numberArr = [1, 2, 3, 4, 5];
+// console.log(numberArr);
 
-// Доступ к элементам массива
+// // Доступ к элементам массива
 
-console.log(numberArr[0]);
-console.log(numberArr[1]);
+// console.log(numberArr[0]);
+// console.log(numberArr[1]);
+
+// // Практическое задание №1
+
+// let colors = ["Фиолетовый", "Розовый", "Черный"];
+// console.log(colors[0]);
+// console.log(colors[colors.length - 1]);
+
+// colors[1] = "Красный";
+
+// console.log(colors);
+
+// // Длина массива
+
+// console.log(numberArr.length);
+
+// // Добавление и удаление элементов
+
+// // Добавление в конец (push)
+// numberArr.push(10);
+// console.log(numberArr);
+
+// // Удаление из конца (pop)
+// numberArr.pop();
+// console.log(numberArr);
+
+// // Практическое задание №2
+
+// let students = [];
+
+// students.push("Ника");
+// students.push("Тимур");
+// students.push("Денис");
+
+// students.pop();
+
+// console.log(students);
+
+// // Перебор массива с помощью цикла for
+
+// let numbers2 = [10, 20, 30];
+
+// for (let i = 0; i < numbers2.length; i++) {
+//     console.log(numbers2[i]);
+// }
+
+// // Цикл for...of
+
+// for (let value of numbers2) {
+//     console.log(value);
+// }
+
+// // Массивы с разными типами данных
+
+// let mixedArray = [1, "text", true, 3.14];
+// console.log(mixedArray);
+
+// // Поиск элемента в массиве
+
+// // Метод 1: indexOf() — возвращает индекс
+// console.log(numberArr.includes(1));
+// console.log(numberArr.indexOf(2));
+
+// // Метод 2: includes() — возвращает true/false
+// console.log(fruits.includes("Яблоко"));
+// console.log(fruits.includes("Манго"));
+
+// // Практическое задание №4
+
+// let cities = ["Волжский", "Волгоград", "Самарканд", "Ташкент", "Казань"];
+
+// let searchCity = "Казань";
+
+// let cityIndex = cities.indexOf(searchCity);
+
+// if (cityIndex !== -1) {
+//     console.log(`Город ${searchCity} найден`);
+//     console.log(`Индекс города: ${cityIndex}`);
+// } else {
+//     console.log(`Город ${searchCity} не найден`)
+// }
+
+// Объекты в JavaScript
+
+// Создание объекта (object literal)
+
+let user2 = {
+    name: "Nika",
+    age: 18,
+    isStudent: true, 
+    sayHello: function() {
+        console.log(`Hello, my name is ${this.name}`);
+    },
+};
+
+console.log(user2);
+
+// Доступ к свойствам объекта
+
+// Через точку:
+console.log(user2.name);
+console.log(user2.age);
+
+// Через квадратные скобки:
+console.log(user2["name"]);
 
 // Практическое задание №1
 
-let colors = ["Фиолетовый", "Розовый", "Черный"];
-console.log(colors[0]);
-console.log(colors[colors.length - 1]);
+let book = {
+    title: "Грокаем Алгоритмы",
+    author: "Адитья Бхаргава",
+    year: 2016
+};
 
-colors[1] = "Красный";
+console.log("Название: ", book.title);
+console.log("Автор: ", book.author);
+console.log("Год издания: ", book.year);
 
-console.log(colors);
+book.year = 2022;
 
-// Длина массива
+console.log("Год издания: ", book.year);
 
-console.log(numberArr.length);
+// Добавление и удаление свойств
 
-// Добавление и удаление элементов
+user2.age = 19;
+user2.name = "Тимур";
+delete user2.isStudent;
+console.log(user2);
 
-// Добавление в конец (push)
-numberArr.push(10);
-console.log(numberArr);
+//  Объект с методами
 
-// Удаление из конца (pop)
-numberArr.pop();
-console.log(numberArr);
+user2.sayHello();
 
 // Практическое задание №2
 
-let students = [];
+let car = {
+    brand: "Toyota",
+    year: 1968,
+    getInfo: function() {
+        console.log(`Автомобиль: ${this.brand}, Год выпуска: ${this.year}`);
+    }
+};
 
-students.push("Ника");
-students.push("Тимур");
-students.push("Денис");
+car.getInfo();
 
-students.pop();
+// Перебор свойств объекта
 
-console.log(students);
-
-// Перебор массива с помощью цикла for
-
-let numbers2 = [10, 20, 30];
-
-for (let i = 0; i < numbers2.length; i++) {
-    console.log(numbers2[i]);
+for (let key in user2) {
+    console.log(key + ": " + user2[key]);
 }
 
-// Цикл for...of
+// Практическое задание №3
 
-for (let value of numbers2) {
-    console.log(value);
+let product = {
+    name: "Ноутбук",
+    price: 45000,
+    brand: "Lenovo",
+};
+
+console.log("Свойства объекта product: ")
+
+for (let key in product) {
+    console.log(`${key}: ${product[key]}`);
 }
 
-// Массивы с разными типами данных
+// Вложенные объекты и массивы
 
-let mixedArray = [1, "text", true, 3.14];
-console.log(mixedArray);
+let student = {
+    name: "Тимур",
+    skills: ["HTML", "CSS", "JS"],
+    address: {
+        city: "Волжский",
+        street: "Пушкина",
+    },
+};
 
-// Поиск элемента в массиве
-
-// Метод 1: indexOf() — возвращает индекс
-console.log(numberArr.includes(1));
-console.log(numberArr.indexOf(2));
-
-// Метод 2: includes() — возвращает true/false
-console.log(fruits.includes("Яблоко"));
-console.log(fruits.includes("Манго"));
-
-// Практическое задание №4
-
-let cities = ["Волжский", "Волгоград", "Самарканд", "Ташкент", "Казань"];
-
-let searchCity = "Казань";
-
-let cityIndex = cities.indexOf(searchCity);
-
-if (cityIndex !== -1) {
-    console.log(`Город ${searchCity} найден`);
-    console.log(`Индекс города: ${cityIndex}`);
-} else {
-    console.log(`Город ${searchCity} не найден`)
-}
+console.log(student.skills[0]);
+console.log(student.address.city);
