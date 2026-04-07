@@ -147,30 +147,122 @@
 
 // Обычная функция:
 
-function sumFunc(a, b) {
-    return a + b;
+// function sumFunc(a, b) {
+//     return a + b;
 
+// }
+
+// // Стрелочная функция:
+
+// const sumFunc2 = (a, b) => a + b;
+
+// // Правила:
+// // 1. Один параметр — скобки необязательны:
+// const double = x => x * 2;
+
+// // 2. Несколько параметров — скобки обязательны:
+// const sumFunc3 = (a, b) => a +b;
+
+// // 3. Нет параметров — пустые скобки:
+// const sayGreeting = () => console.log("Hello");
+
+// // 4. Одна строка — return неявный:
+// const square = x => x * x;
+
+// // 5. Несколько строк — фигурные скобки + явный return:
+// const calculate = (a, b) => {
+//     let result = a + b;
+//     return result * 2;
+// }
+
+// Массивы в JavaScript
+
+// Создание массива
+
+let numberArr = [1, 2, 3, 4, 5];
+console.log(numberArr);
+
+// Доступ к элементам массива
+
+console.log(numberArr[0]);
+console.log(numberArr[1]);
+
+// Практическое задание №1
+
+let colors = ["Фиолетовый", "Розовый", "Черный"];
+console.log(colors[0]);
+console.log(colors[colors.length - 1]);
+
+colors[1] = "Красный";
+
+console.log(colors);
+
+// Длина массива
+
+console.log(numberArr.length);
+
+// Добавление и удаление элементов
+
+// Добавление в конец (push)
+numberArr.push(10);
+console.log(numberArr);
+
+// Удаление из конца (pop)
+numberArr.pop();
+console.log(numberArr);
+
+// Практическое задание №2
+
+let students = [];
+
+students.push("Ника");
+students.push("Тимур");
+students.push("Денис");
+
+students.pop();
+
+console.log(students);
+
+// Перебор массива с помощью цикла for
+
+let numbers2 = [10, 20, 30];
+
+for (let i = 0; i < numbers2.length; i++) {
+    console.log(numbers2[i]);
 }
 
-// Стрелочная функция:
+// Цикл for...of
 
-const sumFunc2 = (a, b) => a + b;
+for (let value of numbers2) {
+    console.log(value);
+}
 
-// Правила:
-// 1. Один параметр — скобки необязательны:
-const double = x => x * 2;
+// Массивы с разными типами данных
 
-// 2. Несколько параметров — скобки обязательны:
-const sumFunc3 = (a, b) => a +b;
+let mixedArray = [1, "text", true, 3.14];
+console.log(mixedArray);
 
-// 3. Нет параметров — пустые скобки:
-const sayGreeting = () => console.log("Hello");
+// Поиск элемента в массиве
 
-// 4. Одна строка — return неявный:
-const square = x => x * x;
+// Метод 1: indexOf() — возвращает индекс
+console.log(numberArr.includes(1));
+console.log(numberArr.indexOf(2));
 
-// 5. Несколько строк — фигурные скобки + явный return:
-const calculate = (a, b) => {
-    let result = a + b;
-    return result * 2;
+// Метод 2: includes() — возвращает true/false
+console.log(fruits.includes("Яблоко"));
+console.log(fruits.includes("Манго"));
+
+// Практическое задание №4
+
+let cities = ["Волжский", "Волгоград", "Самарканд", "Ташкент", "Казань"];
+
+let searchCity = "Казань";
+
+let cityIndex = cities.indexOf(searchCity);
+
+if (cityIndex !== -1) {
+    console.log(`Город ${searchCity} найден`);
+    console.log(`Индекс города: ${cityIndex}`);
+} else {
+    console.log(`Город ${searchCity} не найден`)
 }
